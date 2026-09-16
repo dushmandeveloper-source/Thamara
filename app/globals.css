@@ -1,18 +1,25 @@
 @import "tailwindcss";
 
 :root {
+  /* Brand palette derived from the Thamara logo (navy + gold) */
   --background: #ffffff;
-  --foreground: #0a0a0a;
-  --accent: #e8432b;
-  --ink: #0a0a0a;
-  --muted: #6b6b6b;
+  --foreground: #0e2a5e;
+  --accent: #c0892b; /* gold — decorative fills, highlights on dark */
+  --accent-strong: #8a6216; /* deep gold — gold text on light backgrounds */
+  --ink: #0e2a5e; /* navy — dark sections, headings, primary text */
+  --ink-deep: #09214b; /* deeper navy for rich backgrounds */
+  --cream: #f7f2e8; /* soft cream from the lotus */
+  --muted: #5f6a80; /* slate-blue secondary text */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
   --color-ink: var(--ink);
+  --color-ink-deep: var(--ink-deep);
+  --color-cream: var(--cream);
   --color-muted: var(--muted);
   --font-sans: var(--font-manrope);
 }
@@ -38,8 +45,8 @@ section[id] {
   gap: 0.5rem;
   padding: 0.3rem 0.85rem;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--accent) 12%, transparent);
-  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: var(--accent-strong);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -48,6 +55,7 @@ section[id] {
 
 .tag-label--on-dark {
   background: color-mix(in srgb, var(--accent) 22%, transparent);
+  color: var(--accent);
 }
 
 .headline {
@@ -104,6 +112,105 @@ section[id] {
 }
 .animate-scroll-dot {
   animation: scrollDot 1.8s ease-in-out infinite;
+}
+
+/* ── Preloader (LoftLoader-style branded logo fill reveal, fades out on load) ── */
+.preloader-lock {
+  overflow: hidden;
+}
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background: radial-gradient(circle at 50% 42%, #ffffff 0%, var(--cream) 100%);
+  /* CSS-only fallback: fade out after a few seconds even if JS never runs */
+  animation: preloaderAutoOut 0.6s ease 4.2s forwards;
+}
+.preloader--done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.6s ease, visibility 0s linear 0.6s;
+}
+@keyframes preloaderAutoOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* Logo with a bottom-to-top color "fill" over a dimmed base (LoftLoader pl-imgloading) */
+.preloader__logo {
+  position: relative;
+  width: clamp(190px, 42vw, 300px);
+  aspect-ratio: 1 / 1;
+}
+.preloader__logo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* logo.jpg has a white background — multiply blends it into the cream */
+  mix-blend-mode: multiply;
+}
+.preloader__logo-base {
+  opacity: 0.14;
+  filter: grayscale(1);
+}
+.preloader__logo-fill {
+  clip-path: inset(100% 0 0 0);
+  animation: preloaderFill 1.9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+@keyframes preloaderFill {
+  0% {
+    clip-path: inset(100% 0 0 0);
+  }
+  60%, 100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.preloader__bar {
+  position: relative;
+  height: 3px;
+  width: 180px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(14, 42, 94, 0.1);
+}
+.preloader__bar span {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 40%;
+  border-radius: 999px;
+  background: var(--accent);
+  animation: preloaderTrack 1.3s ease-in-out infinite;
+}
+@keyframes preloaderTrack {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(320%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader__logo-fill,
+  .preloader__bar span {
+    animation: none;
+  }
+  .preloader__logo-fill {
+    clip-path: inset(0 0 0 0);
+  }
 }
 
 /* On-load entrance (used above the fold, e.g. hero) — pure CSS, no JS needed */

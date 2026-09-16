@@ -50,7 +50,7 @@ export function Hero() {
         >
           <a
             href="#apply"
-            className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent/90"
+            className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink transition hover:bg-accent/90"
           >
             Apply Now
             <ArrowUpRight

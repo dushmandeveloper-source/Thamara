@@ -38,7 +38,7 @@ const rows = [
 
 export function Contact() {
   return (
-    <section id="contact" className="bg-[#f7f6f4]">
+    <section id="contact" className="bg-cream">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <Reveal>
           <SectionLabel>Contact Us</SectionLabel>
@@ -94,7 +94,7 @@ export function Contact() {
               className="absolute inset-0 opacity-20"
               style={{
                 backgroundImage:
-                  "radial-gradient(circle at 30% 30%, rgba(232,67,43,0.6), transparent 45%), radial-gradient(circle at 70% 70%, rgba(255,255,255,0.15), transparent 40%)",
+                  "radial-gradient(circle at 30% 30%, rgba(192,137,43,0.55), transparent 45%), radial-gradient(circle at 70% 70%, rgba(255,255,255,0.15), transparent 40%)",
               }}
             />
             <div className="relative text-center text-white">

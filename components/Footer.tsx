@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { contact, nav, siteInfo } from "@/lib/content";
 
@@ -7,11 +8,14 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-sm font-extrabold text-ink">
-                T
-              </span>
-              <span className="text-sm font-bold">{siteInfo.name}</span>
+            <div className="inline-flex items-center justify-center rounded-2xl bg-white p-3">
+              <Image
+                src="/images/logo.jpg"
+                alt="Thamara Foreign Employment Agency logo"
+                width={150}
+                height={150}
+                className="h-24 w-24 object-contain"
+              />
             </div>
             <p className="mt-4 max-w-xs text-sm text-white/60">
               {siteInfo.tagline}

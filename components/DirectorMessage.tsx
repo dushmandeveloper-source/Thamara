@@ -6,7 +6,7 @@ import { directorMessage } from "@/lib/content";
 
 export function DirectorMessage() {
   return (
-    <section className="bg-[#f7f6f4]">
+    <section className="bg-cream">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-[280px_1fr] md:items-center">
         <Reveal className="relative mx-auto aspect-[4/5] w-56 overflow-hidden rounded-3xl md:w-full">
           <Image

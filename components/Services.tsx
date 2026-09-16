@@ -36,7 +36,7 @@ export function Services() {
                 className="group card-lift rounded-2xl border border-white/10 bg-white/[0.03] p-8 hover:border-accent/50"
               >
                 <div className="flex items-center justify-between">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/15 text-accent transition group-hover:bg-accent group-hover:text-white">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/15 text-accent transition group-hover:bg-accent group-hover:text-ink">
                     <Icon size={22} />
                   </span>
                   <ArrowUpRight

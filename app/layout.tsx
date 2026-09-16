@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Preloader } from "@/components/Preloader";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -23,11 +24,12 @@ export default function RootLayout({
     <html lang="en" className={`${manrope.variable} h-full antialiased`}>
       <head>
         <noscript>
-          {/* Without JS, scroll-reveal elements must not stay hidden */}
-          <style>{`.reveal,.stagger>*{opacity:1!important;transform:none!important}`}</style>
+          {/* Without JS: never leave reveal content hidden, and hide the preloader */}
+          <style>{`.reveal,.stagger>*{opacity:1!important;transform:none!important}.preloader{display:none!important}`}</style>
         </noscript>
       </head>
       <body className="min-h-full flex flex-col bg-white text-ink">
+        <Preloader />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

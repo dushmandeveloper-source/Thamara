@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { nav, siteInfo } from "@/lib/content";
+import { nav } from "@/lib/content";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -24,12 +25,22 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#home" className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ink text-sm font-extrabold text-white">
-            T
-          </span>
-          <span className="text-sm font-bold tracking-tight sm:text-base">
-            {siteInfo.name}
+        <a href="#home" className="flex items-center gap-2.5">
+          <Image
+            src="/images/logo-mark.png"
+            alt="Thamara Foreign Employment Agency logo"
+            width={100}
+            height={106}
+            priority
+            className="h-10 w-auto sm:h-11"
+          />
+          <span className="flex flex-col leading-tight">
+            <span className="text-sm font-extrabold tracking-tight text-ink sm:text-base">
+              Thamara
+            </span>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-accent-strong">
+              Foreign Employment Agency
+            </span>
           </span>
         </a>
 
@@ -47,7 +58,7 @@ export function Header() {
 
         <a
           href="#apply"
-          className="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-accent md:inline-block"
+          className="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-accent hover:text-ink md:inline-block"
         >
           Apply Now
         </a>

@@ -78,7 +78,7 @@ export function ApplyForm() {
 
             <button
               type="submit"
-              className="mt-8 w-full rounded-full bg-ink py-3.5 text-sm font-semibold text-white transition hover:bg-accent sm:w-auto sm:px-10"
+              className="mt-8 w-full rounded-full bg-ink py-3.5 text-sm font-semibold text-white transition hover:bg-accent hover:text-ink sm:w-auto sm:px-10"
             >
               Submit Application
             </button>
