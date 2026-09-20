@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Star } from "lucide-react";
-import { SectionLabel } from "@/components/SectionLabel";
 import { Marquee } from "@/components/motion-primitives";
 import { HeroSlider } from "@/components/HeroSlider";
 import { gsap } from "@/lib/gsap";
@@ -88,14 +87,12 @@ export function Hero() {
         className="animate-floaty pointer-events-none absolute -left-24 top-24 z-10 h-96 w-96 rounded-full bg-accent/10 blur-3xl"
       />
 
+      <div aria-hidden className="h-20 shrink-0 sm:h-24" />
+
       <div className="relative flex flex-1 items-center overflow-hidden">
         <div className="mx-auto w-full max-w-6xl px-6 py-3 sm:py-4">
           <div ref={stageRef}>
-            <div>
-              <SectionLabel onDark>Foreign Employment Agency</SectionLabel>
-            </div>
-
-            <h1 className="headline mt-2 max-w-xl text-[clamp(1.75rem,5.5vw,4.5rem)] leading-[1.05] text-white sm:mt-4">
+            <h1 className="headline max-w-xl text-[clamp(1.75rem,5.5vw,4.5rem)] leading-[1.05] text-white">
               Your Prosperity is{" "}
               <span className="text-accent drop-shadow-[0_0_18px_rgba(214,253,112,0.65)]">Our Responsibility.</span>
             </h1>

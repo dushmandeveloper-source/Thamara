@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const slides = [
-  { src: "/images/hero-slide-1.jpg", alt: "Kuwait at night" },
-  { src: "/images/hero-slide-2.jpg", alt: "Salmia, Kuwait" },
-  { src: "/images/hero-slide-3.jpg", alt: "Kuwait cityscape" },
+  { src: "/images/landing-images/abu-dhabi-seascape-with-skyscrapers.jpg", alt: "Abu Dhabi seascape with skyscrapers" },
+  { src: "/images/landing-images/futuristic-dubai-landscape.jpg", alt: "Futuristic Dubai landscape" },
+  { src: "/images/landing-images/bridge-with-city.jpg", alt: "Bridge with city skyline" },
+  { src: "/images/landing-images/aerial-view-old-town-buildings-near-water-valletta-malta.jpg", alt: "Aerial view of old town buildings near water, Valletta, Malta" },
 ];
 
 export function HeroSlider() {
