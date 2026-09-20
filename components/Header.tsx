@@ -25,7 +25,7 @@ export function Header() {
   return (
     <header
       className={`${isHome ? "fixed" : "sticky"} inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
-        isHome ? "mx-3 mt-3 overflow-hidden rounded-t-[1.5rem]" : ""
+        isHome ? "mx-3 mt-3 overflow-hidden rounded-[1.5rem]" : ""
       } ${
         transparent
           ? "border-transparent bg-transparent"

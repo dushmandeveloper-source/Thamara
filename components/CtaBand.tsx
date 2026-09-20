@@ -7,7 +7,7 @@ export function CtaBand() {
   return (
     <section className="relative m-3 overflow-hidden rounded-[1.5rem] bg-ink">
       <Image
-        src="/images/cta-skyline.jpg"
+        src="/images/landing-images/futuristic-dubai-landscape.jpg"
         alt=""
         fill
         aria-hidden
