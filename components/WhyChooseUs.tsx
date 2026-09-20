@@ -1,50 +1,75 @@
 import Image from "next/image";
-import { Check } from "lucide-react";
+import {
+  Award,
+  ArrowUpRight,
+  FileCheck2,
+  HeartHandshake,
+  ShieldCheck,
+  Users,
+} from "lucide-react";
 import { SectionLabel } from "@/components/SectionLabel";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 import { whyChooseUs } from "@/lib/content";
 
+const icons = [Award, ShieldCheck, HeartHandshake, FileCheck2, Users];
+
 export function WhyChooseUs() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
-      <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
-        <div>
-          <Reveal>
-            <SectionLabel>Why Choose Us</SectionLabel>
-            <h2 className="headline mt-6 max-w-md text-3xl text-ink sm:text-4xl">
-              Reasons candidates{" "}
-              <span className="text-muted">trust Thamara Foreign.</span>
-            </h2>
-          </Reveal>
+    <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+      <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16">
+        <Reveal variant="fade-up">
+          <SectionLabel>Why Choose Us</SectionLabel>
+          <h2 className="headline mt-6 text-4xl text-ink sm:text-5xl">
+            Reasons candidates{" "}
+            <span className="text-accent-strong">trust Thamara Foreign.</span>
+          </h2>
+          <p className="mt-5 max-w-md text-base leading-relaxed text-muted">
+            A decade of guiding Sri Lankan job seekers into safe, well-matched
+            careers abroad — with honest support at every step.
+          </p>
 
-          <StaggerGroup className="mt-10 grid gap-3">
-            {whyChooseUs.map((reason) => (
+          <div className="relative mt-10 hidden sm:block">
+            <div
+              aria-hidden
+              className="absolute -left-6 -top-6 h-40 w-40 rounded-full bg-accent/20 blur-3xl"
+            />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
+              <Image
+                src="/images/about.jpg"
+                alt="Thamara team supporting a candidate"
+                fill
+                sizes="480px"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </Reveal>
+
+        <StaggerGroup className="divide-y divide-black/5">
+          {whyChooseUs.map((reason, i) => {
+            const Icon = icons[i % icons.length];
+            return (
               <StaggerItem
                 key={reason}
-                className="flex items-center gap-4 rounded-2xl border border-black/5 bg-white px-6 py-5 transition hover:border-accent/30 hover:bg-accent/[0.02]"
+                className="group flex items-center gap-5 py-5 pl-4 -ml-4 border-l-4 border-transparent transition-all duration-300 hover:border-accent hover:bg-cream/60 sm:gap-6 sm:py-6"
               >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
-                  <Check size={16} />
+                <span className="headline w-9 shrink-0 text-2xl text-accent-strong/40 transition-colors duration-300 group-hover:text-accent-strong sm:w-12 sm:text-3xl">
+                  0{i + 1}
                 </span>
-                <span className="text-sm font-medium text-ink">{reason}</span>
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent-strong transition-all duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:bg-accent group-hover:text-ink">
+                  <Icon size={20} />
+                </span>
+                <span className="flex-1 text-lg font-bold text-ink sm:text-xl">
+                  {reason}
+                </span>
+                <ArrowUpRight
+                  size={20}
+                  className="shrink-0 text-ink/15 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent-strong"
+                />
               </StaggerItem>
-            ))}
-          </StaggerGroup>
-        </div>
-
-        <Reveal
-          delay={0.1}
-          className="group relative aspect-[4/5] overflow-hidden rounded-3xl"
-        >
-          <Image
-            src="/images/apply.jpg"
-            alt="Interview preparation session"
-            fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="img-zoom object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
-        </Reveal>
+            );
+          })}
+        </StaggerGroup>
       </div>
     </section>
   );

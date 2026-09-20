@@ -1,41 +1,76 @@
 import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { SectionLabel } from "@/components/SectionLabel";
-import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
+import {
+  Marquee,
+  Reveal,
+  StaggerGroup,
+  StaggerItem,
+} from "@/components/motion-primitives";
 import { countries } from "@/lib/content";
 
 export function Countries() {
   return (
-    <section id="countries" className="mx-auto max-w-6xl px-6 py-24">
-      <Reveal>
+    <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+      <Reveal className="mx-auto max-w-2xl text-center">
         <SectionLabel>Available Jobs</SectionLabel>
-        <h2 className="headline mt-6 max-w-2xl text-3xl text-ink sm:text-4xl">
+        <h2 className="headline mt-6 text-3xl text-ink sm:text-4xl">
           Destinations we{" "}
-          <span className="text-muted">currently place candidates in.</span>
+          <span className="text-accent-strong">
+            currently place candidates in.
+          </span>
         </h2>
       </Reveal>
 
-      <StaggerGroup className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+      <div className="mt-12">
+        <Marquee speed={22}>
+          {countries.map((country) => (
+            <div
+              key={country.code}
+              className="relative h-28 w-40 shrink-0 overflow-hidden rounded-2xl"
+            >
+              <Image
+                src={country.image}
+                alt={country.name}
+                fill
+                sizes="160px"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
+              <span className="absolute bottom-2 left-3 text-xs font-semibold text-white">
+                {country.name}
+              </span>
+            </div>
+          ))}
+        </Marquee>
+      </div>
+
+      <StaggerGroup className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {countries.map((country) => (
           <StaggerItem
             key={country.code}
-            className="group relative aspect-[3/4] overflow-hidden rounded-2xl"
+            className="card-lift group overflow-hidden rounded-2xl border border-black/5 bg-white"
           >
-            <Image
-              src={country.image}
-              alt={`${country.name} skyline`}
-              fill
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-              className="img-zoom object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-4">
-              <span className="flex items-center gap-1.5 text-xs text-white/70">
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                src={country.image}
+                alt={`${country.name} skyline`}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="img-zoom object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
+              <span className="absolute bottom-3 left-4 flex items-center gap-1.5 text-xs text-white/80">
                 <MapPin size={12} className="text-accent" />
                 Now hiring
               </span>
-              <p className="mt-1 text-base font-semibold text-white">
+            </div>
+            <div className="p-6">
+              <p className="text-base font-semibold text-ink">
                 {country.name}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {country.blurb}
               </p>
             </div>
           </StaggerItem>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
+import "animate.css";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -24,8 +25,8 @@ export default function RootLayout({
     <html lang="en" className={`${manrope.variable} h-full antialiased`}>
       <head>
         <noscript>
-          {/* Without JS: never leave reveal content hidden, and hide the preloader */}
-          <style>{`.reveal,.stagger>*{opacity:1!important;transform:none!important}.preloader{display:none!important}`}</style>
+          {/* Without JS: hide the preloader so it doesn't stay stuck on screen */}
+          <style>{`.preloader{display:none!important}`}</style>
         </noscript>
       </head>
       <body className="min-h-full flex flex-col bg-white text-ink">

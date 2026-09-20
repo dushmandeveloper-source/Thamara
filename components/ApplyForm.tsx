@@ -4,13 +4,14 @@ import { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import { SectionLabel } from "@/components/SectionLabel";
 import { Reveal } from "@/components/motion-primitives";
+import { CountrySelect } from "@/components/CountrySelect";
 import { applyFormFields } from "@/lib/content";
 
 export function ApplyForm() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <section id="apply" className="mx-auto max-w-6xl px-6 py-24">
+    <section id="apply" className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
       <div className="grid gap-12 md:grid-cols-[1fr_1.2fr]">
         <Reveal>
           <SectionLabel>Apply Now</SectionLabel>
@@ -30,7 +31,7 @@ export function ApplyForm() {
               "Trusted overseas employers",
             ].map((point) => (
               <li key={point} className="flex items-center gap-3 text-sm text-ink">
-                <CheckCircle2 size={18} className="text-accent" />
+                <CheckCircle2 size={18} className="text-accent-strong" />
                 {point}
               </li>
             ))}
@@ -57,7 +58,13 @@ export function ApplyForm() {
                   >
                     {field.label}
                   </label>
-                  {field.type === "textarea" ? (
+                  {field.name === "preferredCountry" ? (
+                    <CountrySelect
+                      id={field.name}
+                      name={field.name}
+                      placeholder="Select a country"
+                    />
+                  ) : field.type === "textarea" ? (
                     <textarea
                       id={field.name}
                       name={field.name}
@@ -84,7 +91,7 @@ export function ApplyForm() {
             </button>
 
             {submitted && (
-              <p className="mt-4 flex items-center gap-2 text-sm text-accent">
+              <p className="mt-4 flex items-center gap-2 text-sm text-accent-strong">
                 <CheckCircle2 size={16} />
                 Thanks! Online submissions go live soon — please contact us
                 directly in the meantime.

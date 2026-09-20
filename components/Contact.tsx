@@ -39,7 +39,7 @@ const rows = [
 export function Contact() {
   return (
     <section id="contact" className="bg-cream">
-      <div className="mx-auto max-w-6xl px-6 py-24">
+      <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
         <Reveal>
           <SectionLabel>Contact Us</SectionLabel>
           <h2 className="headline mt-6 max-w-2xl text-3xl text-ink sm:text-4xl">
@@ -52,7 +52,7 @@ export function Contact() {
             {rows.map((row) => {
               const Inner = (
                 <>
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent-strong">
                     <row.icon size={18} />
                   </span>
                   <div>

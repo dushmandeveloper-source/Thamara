@@ -1,13 +1,16 @@
 import Image from "next/image";
 import { SectionLabel } from "@/components/SectionLabel";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
-import { about } from "@/lib/content";
+import { about, siteInfo } from "@/lib/content";
 
 export function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-6 py-24">
+    <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
       <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
-        <Reveal className="group relative order-last aspect-[4/5] overflow-hidden rounded-3xl lg:order-first">
+        <Reveal
+          variant="zoom-in"
+          className="group relative order-last aspect-[4/5] overflow-hidden rounded-3xl lg:order-first"
+        >
           <Image
             src="/images/about.jpg"
             alt="Consultants supporting a candidate"
@@ -31,8 +34,11 @@ export function About() {
             <SectionLabel>About Us</SectionLabel>
             <h2 className="headline mt-6 max-w-md text-3xl text-ink sm:text-4xl">
               Built on trust,{" "}
-              <span className="text-muted">guided by purpose.</span>
+              <span className="text-accent-strong">guided by purpose.</span>
             </h2>
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-muted">
+              {siteInfo.intro} {siteInfo.introSecondary}
+            </p>
           </Reveal>
 
           <StaggerGroup className="mt-10 grid gap-5">

@@ -7,7 +7,7 @@ import { directorMessage } from "@/lib/content";
 export function DirectorMessage() {
   return (
     <section className="bg-cream">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-[280px_1fr] md:items-center">
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 sm:py-20 md:grid-cols-[280px_1fr] md:items-center">
         <Reveal className="relative mx-auto aspect-[4/5] w-56 overflow-hidden rounded-3xl md:w-full">
           <Image
             src="/images/director.jpg"
@@ -21,7 +21,7 @@ export function DirectorMessage() {
 
         <Reveal delay={0.1}>
           <SectionLabel>Managing Director&apos;s Message</SectionLabel>
-          <Quote className="mt-6 text-accent" size={32} />
+          <Quote className="mt-6 text-accent-strong" size={32} />
           <p className="mt-4 max-w-2xl text-xl leading-relaxed text-ink sm:text-2xl">
             {directorMessage.quote}
           </p>

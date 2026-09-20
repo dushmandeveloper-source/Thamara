@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand palette derived from the Thamara logo (navy + gold) */
+  /* Palette matched to the Aeline reference template (lime / near-black / white) */
   --background: #ffffff;
-  --foreground: #0e2a5e;
-  --accent: #c0892b; /* gold — decorative fills, highlights on dark */
-  --accent-strong: #8a6216; /* deep gold — gold text on light backgrounds */
-  --ink: #0e2a5e; /* navy — dark sections, headings, primary text */
-  --ink-deep: #09214b; /* deeper navy for rich backgrounds */
-  --cream: #f7f2e8; /* soft cream from the lotus */
-  --muted: #5f6a80; /* slate-blue secondary text */
+  --foreground: #131313;
+  --accent: #d6fd70; /* lime-green — button fills, highlights on dark (pair with dark text) */
+  --accent-strong: #4f6b1a; /* darkened lime — readable as TEXT on light backgrounds */
+  --ink: #131313; /* near-black — dark sections, headings, primary text */
+  --ink-deep: #0a0a0a; /* deepest near-black for footer/richest sections */
+  --cream: #f2f2f2; /* light grey — soft light-section backgrounds */
+  --muted: #585858; /* secondary/muted grey text */
+  --rating: #f1ee46; /* yellow — star-rating icons ONLY, not a general accent */
 }
 
 @theme inline {
@@ -21,6 +22,7 @@
   --color-ink-deep: var(--ink-deep);
   --color-cream: var(--cream);
   --color-muted: var(--muted);
+  --color-rating: var(--rating);
   --font-sans: var(--font-manrope);
 }
 
@@ -56,6 +58,19 @@ section[id] {
 .tag-label--on-dark {
   background: color-mix(in srgb, var(--accent) 22%, transparent);
   color: var(--accent);
+}
+
+/* Lime glow for accent-colored fills, badges, and highlighted text */
+.glow-accent {
+  box-shadow: 0 0 16px rgba(214, 253, 112, 0.5);
+}
+
+.glow-accent-text {
+  filter: drop-shadow(0 0 12px rgba(214, 253, 112, 0.6));
+}
+
+.glow-accent-sm {
+  box-shadow: 0 0 8px rgba(214, 253, 112, 0.6);
 }
 
 .headline {
@@ -213,66 +228,6 @@ section[id] {
   }
 }
 
-/* On-load entrance (used above the fold, e.g. hero) — pure CSS, no JS needed */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(28px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-.animate-in {
-  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-/* Scroll reveal — element is visible by default; JS toggles the animated state.
-   Without JS, content still shows (see noscript fallback in layout). */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: var(--reveal-delay, 0s);
-  will-change: opacity, transform;
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* Staggered children reveal */
-.stagger > * {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.stagger.is-visible > * {
-  opacity: 1;
-  transform: none;
-}
-.stagger.is-visible > *:nth-child(1) {
-  transition-delay: 0.05s;
-}
-.stagger.is-visible > *:nth-child(2) {
-  transition-delay: 0.12s;
-}
-.stagger.is-visible > *:nth-child(3) {
-  transition-delay: 0.19s;
-}
-.stagger.is-visible > *:nth-child(4) {
-  transition-delay: 0.26s;
-}
-.stagger.is-visible > *:nth-child(5) {
-  transition-delay: 0.33s;
-}
-.stagger.is-visible > *:nth-child(n + 6) {
-  transition-delay: 0.4s;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -280,13 +235,5 @@ section[id] {
   .animate-floaty,
   .animate-scroll-dot {
     animation: none;
-  }
-  .animate-in,
-  .reveal,
-  .stagger > * {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
   }
 }

@@ -1,27 +1,17 @@
 import { Hero } from "@/components/Hero";
-import { TrustStrip } from "@/components/TrustStrip";
-import { About } from "@/components/About";
-import { DirectorMessage } from "@/components/DirectorMessage";
-import { Countries } from "@/components/Countries";
+import { HomeAboutStats } from "@/components/HomeAboutStats";
 import { Services } from "@/components/Services";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
-import { Gallery } from "@/components/Gallery";
-import { ApplyForm } from "@/components/ApplyForm";
-import { Contact } from "@/components/Contact";
+import { CtaBand } from "@/components/CtaBand";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <TrustStrip />
-      <About />
-      <DirectorMessage />
-      <Countries />
+      <HomeAboutStats />
       <Services />
       <WhyChooseUs />
-      <Gallery />
-      <ApplyForm />
-      <Contact />
+      <CtaBand />
     </>
   );
 }
