@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { FacebookIcon } from "@/components/FacebookIcon";
 import { contact, countries, nav, siteInfo } from "@/lib/content";
 
 export function Footer() {
@@ -21,6 +22,15 @@ export function Footer() {
             <p className="mt-4 max-w-xs text-sm text-white/60">
               {siteInfo.tagline}
             </p>
+            <a
+              href={contact.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on Facebook"
+              className="mt-5 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-accent hover:text-ink"
+            >
+              <FacebookIcon size={18} />
+            </a>
           </div>
 
           <div>
@@ -79,6 +89,17 @@ export function Footer() {
               <li className="flex items-center gap-2">
                 <Mail size={16} className="shrink-0 text-accent" />
                 <span>{contact.email}</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <FacebookIcon size={16} className="shrink-0 text-accent" />
+                <a
+                  href={contact.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-white"
+                >
+                  Facebook
+                </a>
               </li>
             </ul>
           </div>

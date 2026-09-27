@@ -150,8 +150,6 @@ export const openingCeremonyGallery = [
   "/images/opening-ceremony-5.jpg",
   "/images/opening-ceremony-6.jpg",
   "/images/opening-ceremony-7.jpg",
-  "/images/opening-ceremony-8.jpg",
-  "/images/opening-ceremony-9.jpg",
   "/images/opening-ceremony-10.jpg",
   "/images/opening-ceremony-11.jpg",
   "/images/opening-ceremony-12.jpg",
@@ -294,4 +292,18 @@ export const contact = {
   whatsapp: "071 5505105",
   email: "thamaraforeign@gmail.com",
   website: "www.thamaraforeign.lk",
+  facebook: "https://web.facebook.com/profile.php?id=61594683179009",
+  mapLink: "https://maps.app.goo.gl/hqYBTanKtSooujXc7",
+  mapEmbedSrc:
+    "https://www.google.com/maps?q=No.+37,+1/2,+Rajapihilla+Road,+Kurunegala,+Sri+Lanka&output=embed",
 };
+
+export const openingHours = [
+  { day: "Monday", hours: "08:00 - 17:00" },
+  { day: "Tuesday", hours: "08:00 - 17:00" },
+  { day: "Wednesday", hours: "08:00 - 17:00" },
+  { day: "Thursday", hours: "08:00 - 17:00" },
+  { day: "Friday", hours: "08:00 - 17:00" },
+  { day: "Saturday", hours: "08:00 - 16:30" },
+  { day: "Sunday", hours: "12:30 - 18:30" },
+];

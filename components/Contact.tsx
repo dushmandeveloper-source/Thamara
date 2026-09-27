@@ -1,14 +1,15 @@
-import { Globe, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, Globe, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { FacebookIcon } from "@/components/FacebookIcon";
 import { SectionLabel } from "@/components/SectionLabel";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
-import { contact } from "@/lib/content";
+import { contact, openingHours } from "@/lib/content";
 
 const rows = [
   {
     icon: MapPin,
     label: "Address",
     value: contact.address.join(" "),
-    href: undefined as string | undefined,
+    href: contact.mapLink,
   },
   {
     icon: Phone,
@@ -33,6 +34,12 @@ const rows = [
     label: "Website",
     value: contact.website,
     href: `https://${contact.website}`,
+  },
+  {
+    icon: FacebookIcon,
+    label: "Facebook",
+    value: "Thamara Foreign Employment Agency",
+    href: contact.facebook,
   },
 ];
 
@@ -67,46 +74,66 @@ export function Contact() {
               );
               return (
                 <StaggerItem key={row.label}>
-                  {row.href ? (
-                    <a
-                      href={row.href}
-                      target={row.href.startsWith("http") ? "_blank" : undefined}
-                      rel="noopener noreferrer"
-                      className="flex items-start gap-4 rounded-xl px-2 py-2 transition hover:bg-accent/[0.04]"
-                    >
-                      {Inner}
-                    </a>
-                  ) : (
-                    <div className="flex items-start gap-4 px-2 py-2">{Inner}</div>
-                  )}
+                  <a
+                    href={row.href}
+                    target={row.href.startsWith("http") ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-4 rounded-xl px-2 py-2 transition hover:bg-accent/[0.04]"
+                  >
+                    {Inner}
+                  </a>
                 </StaggerItem>
               );
             })}
           </StaggerGroup>
 
-          <Reveal
-            delay={0.1}
-            className="relative flex min-h-[260px] items-center justify-center overflow-hidden rounded-3xl border border-black/5"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-ink to-ink/70" />
-            <div
-              aria-hidden
-              className="absolute inset-0 opacity-20"
-              style={{
-                backgroundImage:
-                  "radial-gradient(circle at 30% 30%, rgba(192,137,43,0.55), transparent 45%), radial-gradient(circle at 70% 70%, rgba(255,255,255,0.15), transparent 40%)",
-              }}
-            />
-            <div className="relative text-center text-white">
-              <span className="animate-floaty inline-flex">
-                <MapPin className="text-accent" size={32} />
-              </span>
-              <p className="mt-3 text-base font-semibold">Kurunegala, Sri Lanka</p>
-              <p className="mt-1 text-sm text-white/60">
-                Visit our office for a free consultation
-              </p>
-            </div>
-          </Reveal>
+          <div className="flex flex-col gap-6">
+            <Reveal
+              delay={0.1}
+              className="relative min-h-[220px] overflow-hidden rounded-3xl border border-black/5"
+            >
+              <iframe
+                title="Thamara Foreign Employment Agency location"
+                src={contact.mapEmbedSrc}
+                className="h-full min-h-[220px] w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <a
+                href={contact.mapLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-3 right-3 rounded-full bg-white px-4 py-2 text-xs font-semibold text-ink shadow-lg transition hover:bg-accent"
+              >
+                Open in Google Maps
+              </a>
+            </Reveal>
+
+            <Reveal
+              delay={0.15}
+              className="rounded-3xl border border-black/5 bg-white p-8"
+            >
+              <div className="flex items-center gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent-strong">
+                  <Clock size={18} />
+                </span>
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted">
+                  Opening Hours
+                </p>
+              </div>
+              <ul className="mt-5 space-y-2">
+                {openingHours.map((row) => (
+                  <li
+                    key={row.day}
+                    className="flex items-center justify-between text-sm"
+                  >
+                    <span className="font-medium text-ink">{row.day}</span>
+                    <span className="text-muted">{row.hours}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>
