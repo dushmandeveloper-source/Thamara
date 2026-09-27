@@ -43,7 +43,7 @@ export function Header() {
           >
             <Image
               src="/images/logo-mark.png"
-              alt="Thamara Foreign Employment Agency logo"
+              alt="THAMARA Foreign Employment Agency logo"
               width={100}
               height={106}
               priority
@@ -56,7 +56,7 @@ export function Header() {
                 transparent ? "text-white" : "text-ink"
               }`}
             >
-              Thamara
+              THAMARA
             </span>
             <span
               className={`text-[10px] font-semibold uppercase tracking-[0.14em] transition ${

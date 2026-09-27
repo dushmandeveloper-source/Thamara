@@ -12,7 +12,7 @@ export function Gallery() {
           <SectionLabel>Gallery</SectionLabel>
           <h2 className="headline mt-6 text-3xl text-ink sm:text-4xl">
             A look inside{" "}
-            <span className="text-accent-strong">Thamara Foreign.</span>
+            <span className="text-accent-strong">THAMARA Foreign.</span>
           </h2>
         </Reveal>
 

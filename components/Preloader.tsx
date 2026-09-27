@@ -48,7 +48,7 @@ export function Preloader() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/logo.jpg"
-          alt="Thamara Foreign Employment Agency"
+          alt="THAMARA Foreign Employment Agency"
           className="preloader__logo-fill"
         />
       </div>

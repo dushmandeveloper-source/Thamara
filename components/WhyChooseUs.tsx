@@ -21,7 +21,7 @@ export function WhyChooseUs() {
           <SectionLabel>Why Choose Us</SectionLabel>
           <h2 className="headline mt-6 text-4xl text-ink sm:text-5xl">
             Reasons candidates{" "}
-            <span className="text-accent-strong">trust Thamara Foreign.</span>
+            <span className="text-accent-strong">trust THAMARA Foreign.</span>
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted">
             A decade of guiding Sri Lankan job seekers into safe, well-matched
@@ -36,7 +36,7 @@ export function WhyChooseUs() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
               <Image
                 src="/images/about.jpg"
-                alt="Thamara team supporting a candidate"
+                alt="THAMARA team supporting a candidate"
                 fill
                 sizes="480px"
                 className="object-cover"

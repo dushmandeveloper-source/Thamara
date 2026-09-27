@@ -5,9 +5,9 @@ import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { Testimonials } from "@/components/Testimonials";
 
 export const metadata: Metadata = {
-  title: "About Us — Thamara Foreign Employment Agency",
+  title: "About Us — THAMARA Foreign Employment Agency",
   description:
-    "Learn about Thamara Foreign Employment Agency's mission, vision, and the team helping Sri Lankan candidates find trusted overseas employment.",
+    "Learn about THAMARA Foreign Employment Agency's mission, vision, and the team helping Sri Lankan candidates find trusted overseas employment.",
 };
 
 export default function AboutPage() {

@@ -13,9 +13,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Thamara Foreign Employment Agency",
+  title: "THAMARA Foreign Employment Agency",
   description:
-    "Thamara Foreign Employment Agency (Pvt) Ltd — connecting Sri Lankan job seekers with trusted employment opportunities in Kuwait, UAE, Oman, Qatar, and Bahrain.",
+    "THAMARA Foreign Employment Agency (Pvt) Ltd — connecting Sri Lankan job seekers with trusted employment opportunities in Kuwait, UAE, Oman, Qatar, and Bahrain.",
 };
 
 export default function RootLayout({

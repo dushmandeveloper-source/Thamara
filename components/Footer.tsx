@@ -13,7 +13,7 @@ export function Footer() {
             <div className="inline-flex items-center justify-center rounded-2xl bg-white p-3">
               <Image
                 src="/images/logo.jpg"
-                alt="Thamara Foreign Employment Agency logo"
+                alt="THAMARA Foreign Employment Agency logo"
                 width={150}
                 height={150}
                 className="h-20 w-20 object-contain"

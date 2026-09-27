@@ -38,7 +38,7 @@ const rows = [
   {
     icon: FacebookIcon,
     label: "Facebook",
-    value: "Thamara Foreign Employment Agency",
+    value: "THAMARA Foreign Employment Agency",
     href: contact.facebook,
   },
 ];
@@ -93,7 +93,7 @@ export function Contact() {
               className="relative min-h-[220px] overflow-hidden rounded-3xl border border-black/5"
             >
               <iframe
-                title="Thamara Foreign Employment Agency location"
+                title="THAMARA Foreign Employment Agency location"
                 src={contact.mapEmbedSrc}
                 className="h-full min-h-[220px] w-full border-0"
                 loading="lazy"

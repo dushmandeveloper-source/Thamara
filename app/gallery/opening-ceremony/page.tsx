@@ -6,9 +6,9 @@ import { OpeningCeremonyGrid } from "@/components/OpeningCeremonyGrid";
 import { openingCeremonyGallery } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Opening Ceremony — Thamara Foreign Employment Agency",
+  title: "Opening Ceremony — THAMARA Foreign Employment Agency",
   description:
-    "Photos from the opening ceremony of Thamara Foreign Employment Agency.",
+    "Photos from the opening ceremony of THAMARA Foreign Employment Agency.",
 };
 
 export default function OpeningCeremonyPage() {
@@ -26,7 +26,7 @@ export default function OpeningCeremonyPage() {
         <SectionLabel>Gallery</SectionLabel>
         <h1 className="headline mt-6 text-3xl text-ink sm:text-4xl">
           Opening Ceremony{" "}
-          <span className="text-accent-strong">at Thamara Foreign.</span>
+          <span className="text-accent-strong">at THAMARA Foreign.</span>
         </h1>
         <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
           A look back at the day we opened our doors to serve Sri Lankan job

@@ -1,9 +1,9 @@
 export const siteInfo = {
-  name: "Thamara Foreign Employment Agency",
-  legalName: "Thamara Foreign Employment Agency (Pvt) Ltd.",
+  name: "THAMARA Foreign Employment Agency",
+  legalName: "THAMARA Foreign Employment Agency (Pvt) Ltd.",
   tagline: "Your Prosperity is Our Responsibility.",
   intro:
-    "Thamara Foreign Employment Agency (Pvt) Ltd is a professional foreign employment agency dedicated to connecting Sri Lankan job seekers with reliable and suitable employment opportunities overseas.",
+    "THAMARA Foreign Employment Agency (Pvt) Ltd is a professional foreign employment agency dedicated to connecting Sri Lankan job seekers with reliable and suitable employment opportunities overseas.",
   introSecondary:
     "We provide support throughout the recruitment process, including job placement, documentation, interview preparation, and pre-departure guidance. Our commitment is to provide a trusted and professional service while helping our candidates achieve their career goals abroad.",
 };
@@ -63,7 +63,7 @@ export const directorMessage = {
   quote:
     "With years of experience in the foreign employment industry, our commitment is to provide Sri Lankan job seekers with reliable employment opportunities and professional guidance. With trust, professionalism and a friendly approach, we aim to support every candidate in moving confidently towards a better future.",
   name: "Managing Director",
-  role: "Thamara Foreign Employment Agency (Pvt) Ltd.",
+  role: "THAMARA Foreign Employment Agency (Pvt) Ltd.",
 };
 
 export const countries = [
@@ -205,7 +205,7 @@ export const testimonials = [
     name: "Nimal Perera",
     role: "Placed in Dubai, UAE",
     quote:
-      "Thamara Foreign handled every step of my documentation and interview prep. I felt supported from application to arrival.",
+      "THAMARA Foreign handled every step of my documentation and interview prep. I felt supported from application to arrival.",
     avatar: "https://i.pravatar.cc/150?u=nimal-perera",
   },
   {
