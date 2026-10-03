@@ -14,7 +14,7 @@ export function DirectorMessage() {
             alt="Managing Director"
             fill
             sizes="(max-width: 768px) 224px, 280px"
-            className="object-cover"
+            className="object-cover object-top"
           />
           <div className="absolute inset-0 ring-1 ring-inset ring-black/10" />
         </Reveal>

@@ -255,33 +255,63 @@ export const faqs = [
 export const process = [
   {
     step: "01",
-    title: "Register & Consultation",
+    title: "Receiving Job Orders",
     description:
-      "Share your details and career goals; our team reviews your profile and matches it to suitable openings.",
+      "Receiving and verifying approved overseas vacancies and employment requirements.",
   },
   {
     step: "02",
-    title: "Document Verification",
+    title: "Advertisements",
     description:
-      "We help prepare, verify, and organise every document required by the employer and destination country.",
+      "Promoting approved vacancies through authorized recruitment channels.",
   },
   {
     step: "03",
-    title: "Interview Preparation",
+    title: "Collecting Applications",
     description:
-      "Guided coaching sessions to help you present yourself confidently to overseas employers.",
+      "Receiving and screening applications from eligible job seekers.",
   },
   {
     step: "04",
-    title: "Visa & Travel Processing",
+    title: "Interviews",
     description:
-      "We manage visa applications, contract verification, and travel arrangements on your behalf.",
+      "Assessing candidates according to employer requirements and job specifications.",
   },
   {
     step: "05",
-    title: "Pre-Departure Briefing",
+    title: "Medical Examination",
     description:
-      "A final briefing covering workplace expectations, travel logistics, and life abroad before you depart.",
+      "Completing the required medical assessment for overseas employment.",
+  },
+  {
+    step: "06",
+    title: "Documentation & Visa Processing",
+    description:
+      "Preparing and verifying required documents and processing the worker's employment visa for overseas employment.",
+  },
+  {
+    step: "07",
+    title: "SLBFE Registration",
+    description:
+      "Completing SLBFE registration and applicable pre-departure requirements.",
+  },
+  {
+    step: "08",
+    title: "Flight Reservation",
+    description:
+      "Arranging the worker's confirmed travel and departure itinerary.",
+  },
+  {
+    step: "09",
+    title: "Finalizing & Briefing",
+    description:
+      "Completing final formalities and providing essential pre-departure guidance.",
+  },
+  {
+    step: "10",
+    title: "Departure",
+    description:
+      "Facilitating the worker's departure for the approved overseas employment.",
   },
 ];
 
